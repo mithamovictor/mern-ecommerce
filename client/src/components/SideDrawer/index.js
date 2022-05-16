@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import './index.css';
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import './index.css'
 
 const SideDrawer = ({ show, click }) => {
-  const sideDrawerClass = ["sidedrawer"];
-  const cart =  useSelector(state=>state.cart);
-  const { cartItems } = cart;
+  const sideDrawerClass = ["sidedrawer"]
+  const cart =  useSelector(state=>state.cart)
+  const { cartItems } = cart
 
   const getCartCount = () => {
     return cartItems.reduce((qty, item)=> qty + Number(item.qty), 0)
   }
 
   if(show) {
-    sideDrawerClass.push('show');
+    sideDrawerClass.push('show')
   }
 
   return (
@@ -37,4 +37,4 @@ const SideDrawer = ({ show, click }) => {
   )
 }
 
-export default SideDrawer;
+export default SideDrawer

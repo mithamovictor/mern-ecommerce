@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import './App.css'
 
 // Screens
-import HomeScreen from './screens/HomeScreen';
-import CartScreen from './screens/CartScreen';
-import ProductScreen from './screens/ProductScreen';
+import HomeScreen from './screens/HomeScreen'
+import CartScreen from './screens/CartScreen'
+import ProductScreen from './screens/ProductScreen'
 
 // Components
-import Navbar from './components/Navbar';
-import Backdrop from './components/Backdrop';
-import SideDrawer from './components/SideDrawer';
+import Navbar from './components/Navbar'
+import Backdrop from './components/Backdrop'
+import SideDrawer from './components/SideDrawer'
 
 function App() {
-  const [sideToggle, setSideToggle] = useState(false);
+  const [sideToggle, setSideToggle] = useState(false)
   return (
     <>
       <Navbar click={()=>setSideToggle(!sideToggle)} />
@@ -27,7 +27,7 @@ function App() {
         </Routes>
       </main>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

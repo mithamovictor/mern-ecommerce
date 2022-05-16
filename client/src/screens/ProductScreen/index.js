@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import './index.css';
+import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import './index.css'
 
 // Actions
-import { getProductDetails } from '../../redux/actions/ProductActions';
-import { addToCart } from '../../redux/actions/CartActions';
+import { getProductDetails } from '../../redux/actions/ProductActions'
+import { addToCart } from '../../redux/actions/CartActions'
 
 const ProductScreen = () => {
-  const navigate = useNavigate();
-  const { id } = useParams();
-  const [qty, setQty] = useState(1);
-  const dispatch = useDispatch();
-  const productDetails = useSelector((state) => state.getProductDetails);
-  const { loading, error, product } = productDetails;
+  const navigate = useNavigate()
+  const { id } = useParams()
+  const [qty, setQty] = useState(1)
+  const dispatch = useDispatch()
+  const productDetails = useSelector((state) => state.getProductDetails)
+  const { loading, error, product } = productDetails
   useEffect(() => {
     if (product && id !== product._id) {
-      dispatch(getProductDetails(id));
+      dispatch(getProductDetails(id))
     }
-  }, [dispatch, id, product]);
+  }, [dispatch, id, product])
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
-    navigate('/cart');
-  };
+    dispatch(addToCart(product._id, qty))
+    navigate('/cart')
+  }
 
   return (
     <div className="productscreen">
@@ -42,7 +42,7 @@ const ProductScreen = () => {
             <div className="right__info">
               <p>Price: <span>$ {product.price}</span></p>
               <p>Status: <span>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</span></p>
-              <p>Qty: 
+              <p>Qty:
                 <select value={qty} onChange={e => setQty(e.target.value)}>
                   {[...Array(product.countInStock).keys()].map(x=>(
                     <option key={x+1} value={x+1}>{x+1}</option>
@@ -57,7 +57,7 @@ const ProductScreen = () => {
         </>
       )}
     </div>
-  );
+  )
 }
 
-export default ProductScreen;
+export default ProductScreen

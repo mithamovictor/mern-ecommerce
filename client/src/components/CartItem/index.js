@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import './index.css';
+import { Link } from 'react-router-dom'
+import './index.css'
 
 const CartItem = ({item, qtyChangeHandler, removeFromCartHandler}) => {
   return (
@@ -23,4 +23,4 @@ const CartItem = ({item, qtyChangeHandler, removeFromCartHandler}) => {
   )
 }
 
-export default CartItem;
+export default CartItem

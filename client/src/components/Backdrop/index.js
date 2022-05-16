@@ -1,4 +1,4 @@
-import './index.css';
+import './index.css'
 
 const Backdrop = ({ show, click }) => {
   return show && (
@@ -7,4 +7,4 @@ const Backdrop = ({ show, click }) => {
   )
 }
 
-export default Backdrop;
+export default Backdrop

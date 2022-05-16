@@ -1,30 +1,30 @@
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import CartItem from '../../components/CartItem';
-import './index.css';
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import CartItem from '../../components/CartItem'
+import './index.css'
 
 // Actions
-import { addToCart, removeFromCart } from '../../redux/actions/CartActions';
+import { addToCart, removeFromCart } from '../../redux/actions/CartActions'
 
 const CartScreen = () => {
-  const dispatch = useDispatch();
-  const cart = useSelector(state => state.cart);
-  const { cartItems } = cart;
+  const dispatch = useDispatch()
+  const cart = useSelector(state => state.cart)
+  const { cartItems } = cart
 
   const qtyChangeHandler = (id, qty) => {
-    dispatch(addToCart(id, qty));
+    dispatch(addToCart(id, qty))
   }
 
   const removeFromCartHandler = id => {
-    dispatch(removeFromCart(id));
+    dispatch(removeFromCart(id))
   }
 
   const getCartCount = () => {
-    return cartItems.reduce((qty, item)=>Number(item.qty) + qty, 0);
-  };
+    return cartItems.reduce((qty, item)=>Number(item.qty) + qty, 0)
+  }
 
   const getCartSubTotal = () => {
-    return cartItems.reduce((price, item)=>item.price * item.qty + price, 0);
+    return cartItems.reduce((price, item)=>item.price * item.qty + price, 0)
   }
 
   return (
@@ -45,7 +45,7 @@ const CartScreen = () => {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CartScreen;
+export default CartScreen

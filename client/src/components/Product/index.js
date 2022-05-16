@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import './index.css';
+import { Link } from 'react-router-dom'
+import './index.css'
 
 const Product = ({ imageUrl, name, price, description, productId }) => {
   return (
@@ -12,7 +12,7 @@ const Product = ({ imageUrl, name, price, description, productId }) => {
         <Link to={`/product/${productId}`} className="info__button">View</Link>
       </div>
     </div>
-  );
+  )
 }
 
 export default Product
