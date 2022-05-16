@@ -3,9 +3,9 @@ This is an ecommerce website that has been developed using the MERN structure an
 
 ## Setup
 To run the project for development start by cloning the project locally.
-install node my running ```npm install``` on the root folder to install base dependencies and then run ```npm run setup``` to install core dependencies for the client and server modules.
+Install node my running ```npm install``` on the root folder to install base dependencies and then run ```npm run setup``` to install core dependencies for the client and server.
 
-Set up your **_.env_** variables in the server folder.
+Set up your ```.env``` variables in the server folder.
 
 Spin up the project by running ```npm start``` this will fire up both the client and server concurrently.
 
