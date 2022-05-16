@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllProducts, getProductById } = require('../controller/product.controller');
+const { getProducts, getProductById } = require('../controller/product.controller');
 
 /**
  * @desc Get all products from db
  * @route Get /api/products
  * @access Public
  */
-router.get('/', getAllProducts);
+router.get('/', getProducts);
 
 /**
  * @desc Get a product by id from db

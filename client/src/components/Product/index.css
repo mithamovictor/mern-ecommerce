@@ -12,6 +12,7 @@
 .product > img {
   height: 170px;
   border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 .product__info > p {
