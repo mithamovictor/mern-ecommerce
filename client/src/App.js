@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Screens
@@ -14,7 +14,6 @@ import SideDrawer from './components/SideDrawer';
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
-  const { id } = useParams();
   return (
     <>
       <Navbar click={()=>setSideToggle(!sideToggle)} />
