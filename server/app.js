@@ -1,18 +1,43 @@
 require('dotenv').config();
 const express = require('express');
-const connectDB = require('./config/db');
-const productRoutes = require('./routes/product.routes');
+const fs = require('fs');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 4000;
+const errorHandler = require('./app/common/errorHandler');
+const connectDB = require('./db');
 
+/**
+ * Routers
+ */
+const AuthRouter = require('./app/routes/auth.routes');
+
+/**
+ * Instantiate Server App
+ */
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
+
+/**
+ * Connect to Mongo DB
+ */
 connectDB();
 
-const app = express();
+/**
+ * Instantiate Routes
+ */
+AuthRouter.routesConfig(app);
 
-app.use(express.json());
+/**
+ * Handle Errors
+ */
+app.use(errorHandler);
 
-// Routes
-app.use('/api/products', productRoutes);
-
-const PORT = process.env.PORT || 4000;
-
-
+/**
+ * Serve App
+ * @port process.env.PORT
+ * @default 4000
+ */
 app.listen(PORT, ()=>console.log(`Server running on port ${PORT}`));
